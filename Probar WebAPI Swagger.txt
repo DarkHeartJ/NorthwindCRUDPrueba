@@ -1,0 +1,24 @@
+-Cuerpo del JSON para probar los servicios de agregar y actualizar de la tabla Customers
+
+{
+  "customerId": "",
+  "companyName": "",
+  "contactName": "",
+  "contactTitle": "",
+  "address": "",
+  "city": "",
+  "region": "",
+  "postalCode": "",
+  "country": "",
+  "phone": "",
+  "fax": ""
+}
+
+
+-Cuerpo del JSON para probar los servicios de agregar y actualizar de la tabla Shippers
+
+{
+  "shipperID": 0,
+  "companyName": "",
+  "phone": ""
+}

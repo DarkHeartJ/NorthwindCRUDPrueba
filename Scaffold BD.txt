@@ -1,0 +1,3 @@
+Scaffold para traer la informacion de la BD en Net Core
+
+Scaffold-DbContext "Server=.; Database= Northwind; TrustServerCertificate=True; User ID=; Password=;" Microsoft.EntityFrameworkCore.SqlServer

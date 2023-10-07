@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "ShowReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h3 style="text-align:center"><strong>REPORT JSON</strong></h3>
+        <br />
+        <button id="download-button" class="btn btn-primary">Download JSON</button>
+    </div>
+</div>
+
+<hr />
+
+@if (Model != null)
+{
+    <pre>@Html.Raw(Model)</pre>
+}
+
+@section Scripts{
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            var downloadButton = document.getElementById("download-button");
+
+            downloadButton.addEventListener("click", function () {
+                var jsonContent = @Html.Raw(Model);
+
+                var formattedJson = JSON.stringify(jsonContent, null, 4);
+
+                var blob = new Blob([formattedJson], { type: "text/plain;charset=utf-8" });
+                var url = window.URL.createObjectURL(blob);
+
+                var a = document.createElement("a");
+                a.style.display = "none";
+                a.href = url;
+                a.download = "report.txt";
+
+                document.body.appendChild(a);
+                a.click();
+
+                window.URL.revokeObjectURL(url);
+            });
+        });
+    </script>
+}
